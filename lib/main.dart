@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'pages/stateless.dart';
-import 'pages/stateful.dart';
-import 'pages/column.dart';
-import 'pages/row.dart';
-import 'pages/statefulpage.dart';
+import 'NUGRAHA_2323050026/statelesspage.dart';
+
 void main() {
-  runApp(const MaterialApp(
-    home: HomePage(), 
-  ));
+  runApp(
+    const MaterialApp(debugShowCheckedModeBanner: false, home: HomePage()),
+  );
 }
