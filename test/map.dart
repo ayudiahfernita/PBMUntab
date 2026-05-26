@@ -20,7 +20,7 @@ void main() {
   print(user2);
 
 
-  users.forEach((user) {
+  for (var user in users) {
     print(user['nama']);
-  });
+  }
 }

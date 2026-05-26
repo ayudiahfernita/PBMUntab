@@ -5,11 +5,11 @@ void main() {
   print(buah[0]);
 
   print(buah.length);
-  buah.forEach((item) {
+  for (var item in buah) {
     print(item);
-  });
+  }
 
-  data.forEach((item) {
+  for (var item in data) {
     print(item);
-  });
+  }
 }
