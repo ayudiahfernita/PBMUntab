@@ -16,19 +16,19 @@ class Rows extends StatelessWidget {
           
           Container(
             color: Colors.red,
-            child: const Text('Container 1'),
             height: 200,
+            child: const Text('Container 1'),
           ),
           Container(
             color: Colors.green,
-            child: const Text('Container 2'),
             width: 100,
             height: 200,
+            child: const Text('Container 2'),
          ),
           Container(
             color: Colors.blue,
-            child: const Text('Container 3'),
             height: 100,
+            child: const Text('Container 3'),
           ),
         ],
       ),
