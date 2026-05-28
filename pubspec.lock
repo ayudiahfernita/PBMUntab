@@ -205,6 +205,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.11"
+<<<<<<< HEAD
   url_launcher:
     dependency: "direct main"
     description:
@@ -269,6 +270,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.5"
+=======
+>>>>>>> 8001cc2 (save progress)
   vector_math:
     dependency: transitive
     description:
@@ -294,5 +297,10 @@ packages:
     source: hosted
     version: "1.1.1"
 sdks:
+<<<<<<< HEAD
   dart: ">=3.10.0 <4.0.0"
   flutter: ">=3.38.0"
+=======
+  dart: ">=3.10.0-0 <4.0.0"
+  flutter: ">=3.18.0-18.0.pre.54"
+>>>>>>> 8001cc2 (save progress)
