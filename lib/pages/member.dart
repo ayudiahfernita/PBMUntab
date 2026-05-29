@@ -7,8 +7,8 @@ import '../Buda_2323050001/dashboard.dart' as buda;
 import '../MADEILALALITA_2323050013/stateless_page.dart' as ila;
 import '../PANDE_2323050006/statelesspage.dart' as pande;
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class Member extends StatelessWidget {
+  const Member({super.key});
 
   final List<Map<String, dynamic>> items = const [
     {
@@ -41,6 +41,26 @@ class HomePage extends StatelessWidget {
       'color': Colors.red,
       'page': pande.StatelessPage(),
     },
+    
+    {
+      'title': 'Pande',
+      'subtitle': '21xxxxxxxx',
+      'color': Colors.red,
+      'page': pande.StatelessPage(),
+    },
+    {
+      'title': 'Pande',
+      'subtitle': '21xxxxxxxx',
+      'color': Colors.red,
+      'page': pande.StatelessPage(),
+    },
+    {
+      'title': 'Pande',
+      'subtitle': '21xxxxxxxx',
+      'color': Colors.red,
+      'page': pande.StatelessPage(),
+    },
+    
   ];
 
   @override
@@ -50,12 +70,12 @@ class HomePage extends StatelessWidget {
 
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.green.shade700,
         centerTitle: true,
         title: const Text(
           'Flutter Project',
           style: TextStyle(
-            color: Colors.black,
+            color: Colors.white,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -66,6 +86,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            
             const Text(
               'Daftar Anggota',
               style: TextStyle(
