@@ -4,7 +4,7 @@ import 'column.dart';
 import '../NUGRAHA_2323050026/statelesspage.dart' as nugraha;
 import '../Mika_2323050007/statelesspage.dart' as mika;
 import '../Buda_2323050001/dashboard.dart' as buda;
-import '../MADEILALALITA_2323050013/stateless_page.dart' as ila;
+import '../MADEILALALITA_2323050013/main.dart' as ila;
 import '../PANDE_2323050006/statelesspage.dart' as pande;
 
 class Member extends StatelessWidget {
@@ -33,7 +33,7 @@ class Member extends StatelessWidget {
       'title': 'Madeilalalita',
       'subtitle': '21xxxxxxxx',
       'color': Colors.green,
-      'page': ila.MyStatelessPage(),
+      'page': const ila.MadeilaApp(),
     },
     {
       'title': 'Pande',
