@@ -68,7 +68,7 @@ class Homepage extends StatelessWidget {
             _QuickInfoCard(
               icon: Icons.menu_book,
               title: 'Program Studi',
-              value: 'Teknik Informatika',
+              value: 'Sistem Inforasi',
               color: Color(0xFF7C3AED),
             ),
             _QuickInfoCard(
