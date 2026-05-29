@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'row.dart';
 import 'column.dart';
 import '../NUGRAHA_2323050026/statelesspage.dart' as nugraha;
-import '../Mika_2323050007/statelesspage.dart' as mika;
+import '../Mika_2323050007/widget/statelesspage.dart' as mika;
 import '../Buda_2323050001/dashboard.dart' as buda;
 import '../MADEILALALITA_2323050013/main.dart' as ila;
 import '../PANDE_2323050006/statelesspage.dart' as pande;
@@ -41,7 +41,7 @@ class Member extends StatelessWidget {
       'color': Colors.red,
       'page': pande.StatelessPage(),
     },
-    
+
     {
       'title': 'Pande',
       'subtitle': '21xxxxxxxx',
@@ -60,7 +60,6 @@ class Member extends StatelessWidget {
       'color': Colors.red,
       'page': pande.StatelessPage(),
     },
-    
   ];
 
   @override
@@ -74,10 +73,7 @@ class Member extends StatelessWidget {
         centerTitle: true,
         title: const Text(
           'Flutter Project',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
 
@@ -86,23 +82,16 @@ class Member extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            
             const Text(
               'Daftar Anggota',
-              style: TextStyle(
-                fontSize: 26,
-                fontWeight: FontWeight.bold,
-              ),
+              style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
             ),
 
             const SizedBox(height: 6),
 
             const Text(
               'Pilih halaman yang ingin dibuka',
-              style: TextStyle(
-                color: Colors.grey,
-                fontSize: 16,
-              ),
+              style: TextStyle(color: Colors.grey, fontSize: 16),
             ),
 
             const SizedBox(height: 20),
@@ -151,8 +140,7 @@ class Member extends StatelessWidget {
 
                               Expanded(
                                 child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
                                       item['title'],
