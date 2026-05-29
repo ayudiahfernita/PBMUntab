@@ -1,36 +1,51 @@
 import 'package:flutter/material.dart';
 
-class Columns extends StatelessWidget {
-  const Columns({super.key});
+
+
+class HomePageTest extends StatefulWidget {
+  const HomePageTest({super.key});
+  @override
+  _HomePageTestState createState() => _HomePageTestState();
+}
+
+class _HomePageTestState extends State<HomePageTest> {
+
+  int currentIndex = 0;
+
+  final List<Widget> pages = [
+    Center(child: Text("Home")),
+    Center(child: Text("Search")),
+    Center(child: Text("Profile")),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Stateless Page'),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          
-          Container(
-            color: Colors.red,
-            width: 100,
-            height: 100,
-            child: const Text('Container 1'),
+      body: pages[currentIndex],
+
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentIndex,
+
+        onTap: (index) {
+          setState(() {
+            currentIndex = index;
+          });
+        },
+
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: "Home",
           ),
-          Container(
-            color: Colors.green,
-            width: 200,
-            height: 100,
-            child: const Text('Container 2'),
+
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: "Search",
           ),
-          Container(
-            color: Colors.blue,
-            width: 300,
-            height: 100,
-            child: const Text('Container 3'),
+
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: "Profile",
           ),
         ],
       ),

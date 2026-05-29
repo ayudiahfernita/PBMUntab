@@ -1,329 +1,510 @@
 import 'package:flutter/material.dart';
-import 'column_page.dart';
-import 'row_page.dart';
-import 'stateless_page.dart';
-import 'stateful_page.dart';
+
+import 'absensi_page.dart';
+import 'nilai_page.dart';
+import 'profile_page.dart';
+import 'jadwal_page.dart';
+import 'tugas_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  // PUSAT NOTIFIKASI INTERAKTIF
-  void _openAdvancedNotificationCenter(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      backgroundColor: const Color(0xff090d16),
-      elevation: 20,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.only(topLeft: Radius.circular(32), topRight: Radius.circular(32)),
-      ),
-      builder: (context) {
-        return Container(
-          padding: const EdgeInsets.all(28.0),
-          decoration: BoxDecoration(
-            border: Border(
-              top: BorderSide(color: Colors.cyan.withOpacity(0.2), width: 1.5),
-            ),
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(color: const Color(0xfff59e0b).withOpacity(0.1), shape: BoxShape.circle),
-                        child: const Icon(Icons.bolt_rounded, color: Color(0xfff59e0b), size: 24),
-                      ),
-                      const SizedBox(width: 14),
-                      const Text(
-                        'LOG TELEMETRI LANGSUNG', 
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white, letterSpacing: 1.5),
-                      ),
-                    ],
-                  ),
-                  IconButton(
-                    icon: const Icon(Icons.close_rounded, color: Colors.white60),
-                    onPressed: () => Navigator.pop(context),
-                  )
-                ],
-              ),
-              const Divider(height: 30, color: Colors.white10),
-              _buildCyberNotificationItem(
-                'SINKRONISASI LOGISTIK BERHASIL',
-                'Simulasi anggaran otomatis pada menu Stateful telah disesuaikan dengan harga pasar kuartal terbaru.',
-                '10 Menit Lalu',
-                const Color(0xff22c55e),
-              ),
-              const SizedBox(height: 16),
-              _buildCyberNotificationItem(
-                'LEGALITAS SIUJK AMAN',
-                'Surat Izin Usaha Jasa Konstruksi CV DHELATA GRUP terverifikasi aktif 100% pada sistem Stateless.',
-                '1 Hari Lalu',
-                const Color(0xff3b82f6),
-              ),
-              const SizedBox(height: 12),
-            ],
-          ),
-        );
-      },
-    );
-  }
-
-  Widget _buildCyberNotificationItem(String title, String desc, String time, Color themeColor) {
-    return Container(
-      padding: const EdgeInsets.all(14),
-      decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.01),
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            margin: const EdgeInsets.only(top: 4),
-            width: 8,
-            height: 8,
-            decoration: BoxDecoration(color: themeColor, shape: BoxShape.circle, boxShadow: [BoxShadow(color: themeColor, blurRadius: 6)]),
-          ),
-          const SizedBox(width: 14),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(title, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: themeColor, letterSpacing: 0.5)),
-                    Text(time, style: const TextStyle(fontSize: 11, color: Colors.grey)),
-                  ],
-                ),
-                const SizedBox(height: 6),
-                Text(desc, style: const TextStyle(fontSize: 12, color: Color(0xff94a3b8), height: 1.4)),
-              ],
-            ),
-          )
-        ],
-      ),
-    );
-  }
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
-      backgroundColor: const Color(0xff090d16),
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            expandedHeight: 270.0,
-            floating: false,
-            pinned: true,
-            elevation: 0,
-            backgroundColor: const Color(0xff0f172a),
-            actions: [
-              Padding(
-                padding: const EdgeInsets.only(right: 12.0),
-                child: Center(
-                  child: Stack(
-                    children: [
-                      IconButton(
-                        icon: const Icon(Icons.grid_view_rounded, color: Colors.cyan, size: 24),
-                        onPressed: () => _openAdvancedNotificationCenter(context),
-                      ),
-                      Positioned(
-                        right: 10,
-                        top: 10,
-                        child: Container(
-                          width: 8,
-                          height: 8,
-                          decoration: const BoxDecoration(color: Colors.amber, shape: BoxShape.circle),
+      backgroundColor: const Color(0xFFF4F7FE),
+
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+
+              children: [
+
+                /// HEADER
+                Row(
+                  mainAxisAlignment:
+                      MainAxisAlignment.spaceBetween,
+
+                  children: [
+
+                    Column(
+                      crossAxisAlignment:
+                          CrossAxisAlignment.start,
+
+                      children: [
+
+                        Text(
+                          'Hello, Made 👋',
+                          style: TextStyle(
+                            color: Colors.grey.shade700,
+                            fontSize: 18,
+                          ),
                         ),
-                      )
+
+                        const SizedBox(height: 5),
+
+                        const Text(
+                          'Dashboard Akademik',
+                          style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    Container(
+                      padding: const EdgeInsets.all(4),
+
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.circular(18),
+                        color: Colors.white,
+
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(
+                              alpha: 0.05,
+                            ),
+                            blurRadius: 10,
+                          ),
+                        ],
+                      ),
+
+                      child: const CircleAvatar(
+                        radius: 28,
+                        backgroundColor: Colors.blue,
+
+                        child: Icon(
+                          Icons.person,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+
+                const SizedBox(height: 30),
+
+                /// CARD AKADEMIK
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(28),
+
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+
+                    gradient: const LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+
+                      colors: [
+                        Color(0xFF4A6CF7),
+                        Color(0xFF6EA8FF),
+                      ],
+                    ),
+
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.blue.withValues(
+                          alpha: 0.25,
+                        ),
+                        blurRadius: 20,
+                        offset: const Offset(0, 10),
+                      ),
                     ],
                   ),
-                ),
-              )
-            ],
-            flexibleSpace: FlexibleSpaceBar(
-              collapseMode: CollapseMode.parallax,
-              background: Container(
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [Color(0xff0f172a), Color(0xff1e1e38)],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                ),
-                child: Stack(
-                  children: [
-                    Positioned(
-                      top: -20,
-                      right: -20,
-                      child: CircleAvatar(radius: 100, backgroundColor: Colors.cyan.withOpacity(0.04)),
-                    ),
-                    Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
+
+                  child: Column(
+                    crossAxisAlignment:
+                        CrossAxisAlignment.start,
+
+                    children: [
+
+                      Row(
+                        mainAxisAlignment:
+                            MainAxisAlignment.spaceBetween,
+
                         children: [
-                          const SizedBox(height: 35),
-                          Container(
-                            padding: const EdgeInsets.all(16),
-                            decoration: BoxDecoration(
-                              color: const Color(0xff090d16),
-                              shape: BoxShape.circle,
-                              border: Border.all(color: Colors.cyan.withOpacity(0.3), width: 1.5),
-                              boxShadow: [
-                                BoxShadow(color: Colors.cyan.withOpacity(0.15), blurRadius: 20)
-                              ],
-                            ),
-                            child: const Icon(Icons.rocket_launch_rounded, color: Colors.cyan, size: 36),
+
+                          Column(
+                            crossAxisAlignment:
+                                CrossAxisAlignment.start,
+
+                            children: [
+
+                              const Text(
+                                'Mahasiswa Aktif',
+                                style: TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 16,
+                                ),
+                              ),
+
+                              const SizedBox(height: 8),
+
+                              const Text(
+                                'Made Ila Lalita',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 28,
+                                  fontWeight:
+                                      FontWeight.bold,
+                                ),
+                              ),
+
+                              const SizedBox(height: 6),
+
+                              const Text(
+                                'NIM : 2323050013',
+                                style: TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ],
                           ),
-                          const SizedBox(height: 14),
-                          const Text(
-                            'CV DHELATA GRUP',
-                            style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.w900, letterSpacing: 1.5),
-                          ),
-                          const SizedBox(height: 6),
+
                           Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 4),
+                            padding:
+                                const EdgeInsets.all(18),
+
                             decoration: BoxDecoration(
-                              color: Colors.cyan.withOpacity(0.08), 
-                              borderRadius: BorderRadius.circular(100), 
-                              border: Border.all(color: Colors.cyan.withOpacity(0.3)),
+                              color: Colors.white
+                                  .withValues(alpha: 0.15),
+
+                              borderRadius:
+                                  BorderRadius.circular(20),
                             ),
-                            child: const Text(
-                              'ANTARMUKA SISTEM UTAMA v2.0',
-                              style: TextStyle(color: Colors.cyan, fontSize: 9, fontWeight: FontWeight.bold, letterSpacing: 1.0),
+
+                            child: const Icon(
+                              Icons.school,
+                              color: Colors.white,
+                              size: 45,
                             ),
                           ),
                         ],
                       ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.only(left: 24, right: 24, top: 24, bottom: 8),
-              child: Container(
-                padding: const EdgeInsets.all(18),
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.01),
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: Colors.white.withOpacity(0.05)),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    _buildTelemetryStat('SISTEM', 'AKTIF', Colors.green),
-                    _buildTelemetryStat('KONEKSI', 'AMAN', Colors.cyan),
-                    _buildTelemetryStat('MESIN PO', 'SIAP', Colors.amber),
-                  ],
-                ),
-              ),
-            ),
-          ),
 
-          const SliverToBoxAdapter(
-            child: Padding(
-              padding: EdgeInsets.only(left: 24, top: 20, bottom: 12),
-              child: Text(
-                'MATRIKS KONTROL NAVIGASI', 
-                style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: Colors.white38, letterSpacing: 2.0),
-              ),
-            ),
-          ),
+                      const SizedBox(height: 30),
 
-          SliverPadding(
-            padding: const EdgeInsets.symmetric(horizontal: 24),
-            sliver: SliverList(
-              delegate: SliverChildListDelegate([
-                _buildAdvancedCyberCard(context, 'Format Layout Column', 'Katalog Jasa & Portofolio Konstruksi', Icons.view_stream_rounded, const Color(0xffef4444)),
-                const SizedBox(height: 12),
-                _buildAdvancedCyberCard(context, 'Format Layout Row', 'Metrik Statistik Pencapaian Operasional', Icons.analytics_rounded, const Color(0xff3b82f6)),
-                const SizedBox(height: 12),
-                _buildAdvancedCyberCard(context, 'Format Halaman Stateless', 'Profil Hukum & Dokumen Legalitas Bisnis', Icons.fingerprint_rounded, const Color(0xffa855f7)),
-                const SizedBox(height: 12),
-                _buildAdvancedCyberCard(context, 'Format Halaman Stateful', 'Kalkulator Simulasi Estimasi Biaya PO', Icons.hourglass_empty_rounded, const Color(0xff22c55e)),
-                const SizedBox(height: 32),
-              ]),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+                      Row(
+                        mainAxisAlignment:
+                            MainAxisAlignment.spaceBetween,
 
-  Widget _buildTelemetryStat(String label, String value, Color color) {
-    return Column(
-      children: [
-        Text(label, style: const TextStyle(fontSize: 10, color: Colors.grey, fontWeight: FontWeight.bold, letterSpacing: 0.5)),
-        const SizedBox(height: 4),
-        Row(
-          children: [
-            Container(width: 6, height: 6, decoration: BoxDecoration(color: color, shape: BoxShape.circle, boxShadow: [BoxShadow(color: color, blurRadius: 4)])),
-            const SizedBox(width: 6),
-            Text(value, style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: color, letterSpacing: 0.5)),
-          ],
-        )
-      ],
-    );
-  }
+                        children: [
 
-  Widget _buildAdvancedCyberCard(BuildContext context, String title, String sub, IconData icon, Color neonColor) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.01),
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: neonColor.withOpacity(0.15)),
-      ),
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          borderRadius: BorderRadius.circular(20),
-          onTap: () {
-            Widget targetPage = const ColumnPage();
-            if (title.contains('Row')) targetPage = const RowPage();
-            if (title.contains('Stateless')) targetPage = const MyStatelessPage();
-            if (title.contains('Stateful')) targetPage = const MyStatefulPage();
+                          statistikItem(
+                            'IPK',
+                            '3.85',
+                          ),
 
-            Navigator.push(context, MaterialPageRoute(builder: (context) => targetPage));
-          },
-          child: Padding(
-            padding: const EdgeInsets.all(18.0),
-            child: Row(
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: neonColor.withOpacity(0.08), 
-                    borderRadius: BorderRadius.circular(14),
-                    border: Border.all(color: neonColor.withOpacity(0.2))
-                  ),
-                  child: Icon(icon, color: neonColor, size: 24),
-                ),
-                const SizedBox(width: 16),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(title, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: Colors.white)),
-                      const SizedBox(height: 4),
-                      Text(sub, style: const TextStyle(fontSize: 12, color: Colors.grey, height: 1.3)),
+                          statistikItem(
+                            'Semester',
+                            '4',
+                          ),
+
+                          statistikItem(
+                            'SKS',
+                            '24',
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),
-                Icon(Icons.terminal_rounded, color: neonColor.withOpacity(0.4), size: 16),
+
+                const SizedBox(height: 35),
+
+                /// QUICK MENU
+                const Text(
+                  'Quick Access',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+
+                const SizedBox(height: 20),
+
+                GridView.count(
+                  shrinkWrap: true,
+                  physics:
+                      const NeverScrollableScrollPhysics(),
+
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 18,
+                  mainAxisSpacing: 18,
+                  childAspectRatio: 1.05,
+
+                  children: [
+
+                    dashboardCard(
+                      context,
+                      'Absensi',
+                      Icons.check_circle,
+                      const Color(0xFF22C55E),
+                      const AbsensiPage(),
+                    ),
+
+                    dashboardCard(
+                      context,
+                      'Nilai',
+                      Icons.school,
+                      const Color(0xFFF59E0B),
+                      const NilaiPage(),
+                    ),
+
+                    dashboardCard(
+                      context,
+                      'Jadwal',
+                      Icons.calendar_month,
+                      const Color(0xFFEF4444),
+                      const JadwalPage(),
+                    ),
+
+                    dashboardCard(
+                      context,
+                      'Tugas',
+                      Icons.assignment,
+                      const Color(0xFF14B8A6),
+                      const TugasPage(),
+                    ),
+                  ],
+                ),
+
+                const SizedBox(height: 35),
+
+                /// RECENT ACTIVITY
+                const Text(
+                  'Recent Activity',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+
+                const SizedBox(height: 18),
+
+                activityCard(
+                  Icons.check_circle,
+                  Colors.green,
+                  'Absensi Berhasil',
+                  'Pemrograman Mobile • Hari ini',
+                ),
+
+                activityCard(
+                  Icons.assignment,
+                  Colors.orange,
+                  'Tugas Baru',
+                  'UI Flutter • Deadline besok',
+                ),
+
+                activityCard(
+                  Icons.school,
+                  Colors.blue,
+                  'Nilai Telah Update',
+                  'Basis Data • Grade A',
+                ),
+
+                const SizedBox(height: 30),
               ],
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget statistikItem(
+    String title,
+    String value,
+  ) {
+
+    return Column(
+      children: [
+
+        Text(
+          value,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+
+        const SizedBox(height: 6),
+
+        Text(
+          title,
+          style: const TextStyle(
+            color: Colors.white70,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget dashboardCard(
+    BuildContext context,
+    String title,
+    IconData icon,
+    Color color,
+    Widget page,
+  ) {
+
+    return InkWell(
+
+      borderRadius: BorderRadius.circular(28),
+
+      onTap: () {
+
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => page,
+          ),
+        );
+      },
+
+      child: Container(
+        padding: const EdgeInsets.all(22),
+
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(28),
+
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.04),
+              blurRadius: 15,
+              offset: const Offset(0, 6),
+            ),
+          ],
+        ),
+
+        child: Column(
+          crossAxisAlignment:
+              CrossAxisAlignment.start,
+
+          children: [
+
+            Container(
+              padding: const EdgeInsets.all(14),
+
+              decoration: BoxDecoration(
+                color: color.withValues(alpha: 0.12),
+                borderRadius: BorderRadius.circular(18),
+              ),
+
+              child: Icon(
+                icon,
+                color: color,
+                size: 32,
+              ),
+            ),
+
+            const Spacer(),
+
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            const SizedBox(height: 6),
+
+            Text(
+              'Tap untuk membuka',
+              style: TextStyle(
+                color: Colors.grey.shade600,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget activityCard(
+    IconData icon,
+    Color color,
+    String title,
+    String subtitle,
+  ) {
+
+    return Container(
+      margin: const EdgeInsets.only(bottom: 16),
+
+      padding: const EdgeInsets.all(18),
+
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(22),
+
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.04),
+            blurRadius: 12,
+            offset: const Offset(0, 5),
+          ),
+        ],
+      ),
+
+      child: Row(
+        children: [
+
+          Container(
+            padding: const EdgeInsets.all(14),
+
+            decoration: BoxDecoration(
+              color: color.withValues(alpha: 0.12),
+              borderRadius: BorderRadius.circular(16),
+            ),
+
+            child: Icon(
+              icon,
+              color: color,
+            ),
+          ),
+
+          const SizedBox(width: 18),
+
+          Expanded(
+            child: Column(
+              crossAxisAlignment:
+                  CrossAxisAlignment.start,
+
+              children: [
+
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 17,
+                  ),
+                ),
+
+                const SizedBox(height: 4),
+
+                Text(
+                  subtitle,
+                  style: TextStyle(
+                    color: Colors.grey.shade600,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
