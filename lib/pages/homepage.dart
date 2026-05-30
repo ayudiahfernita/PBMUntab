@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'member.dart';
-import 'dosen.dart';
-
 
 
 class HomePage extends StatelessWidget {

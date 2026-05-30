@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'absensi_page.dart';
 import 'nilai_page.dart';
-import 'profile_page.dart';
 import 'jadwal_page.dart';
 import 'tugas_page.dart';
 
