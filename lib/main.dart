@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'Buda_2323050001/dashboard.dart';
+import 'BUDA_2323050001/navigation.dart';
 
 void main() {
   runApp(
     const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: DashboardPage(),
+      home: NavigationPage(),
     ),
   );
 }
