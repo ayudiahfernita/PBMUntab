@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'row.dart';
 import 'column.dart';
-import '../NUGRAHA_2323050026/statelesspage.dart' as nugraha;
+import '../NUGRAHA_2323050026/Tugas_2/main_navigation.dart' as nugraha;
 import '../Mika_2323050007/widget/statelesspage.dart' as mika;
 import '../Buda_2323050001/dashboard.dart' as buda;
-import '../MADEILALALITA_2323050013/tugas1/home_page.dart' as ila;
+import '../MADEILALALITA_2323050013/tugas2/main.dart' as ila;
 import '../PANDE_2323050006/statelesspage.dart' as pande;
 
 class Member extends StatelessWidget {
@@ -15,7 +15,7 @@ class Member extends StatelessWidget {
       'title': 'Nugraha',
       'subtitle': '21xxxxxxxx',
       'color': Colors.blue,
-      'page': nugraha.HomePage(),
+      'page': nugraha.MainNavigation(),
     },
     {
       'title': 'Mika',
@@ -33,7 +33,7 @@ class Member extends StatelessWidget {
       'title': 'Madeilalalita',
       'subtitle': '21xxxxxxxx',
       'color': Colors.green,
-      'page': const ila({HomePage}),
+      'page': ila.MadeilaApp(),
     },
     {
       'title': 'Pande',

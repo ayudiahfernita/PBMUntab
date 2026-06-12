@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'absensi.dart';
 
 class HomePage extends StatelessWidget {
   final Function(int) onMenuTap;
@@ -15,23 +15,16 @@ class HomePage extends StatelessWidget {
         elevation: 0,
         title: const Text(
           "Universitas Tabanan",
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.notifications),
-          ),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.notifications)),
         ],
       ),
 
       body: SingleChildScrollView(
         child: Column(
           children: [
-
             // HEADER
             Container(
               width: double.infinity,
@@ -46,13 +39,9 @@ class HomePage extends StatelessWidget {
               child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
                   Text(
                     "Selamat Datang 👋",
-                    style: TextStyle(
-                      color: Colors.green,
-                      fontSize: 18,
-                    ),
+                    style: TextStyle(color: Colors.green, fontSize: 18),
                   ),
 
                   SizedBox(height: 8),
@@ -84,7 +73,6 @@ class HomePage extends StatelessWidget {
 
                 // JANGAN PAKAI CONST
                 children: [
-
                   MenuCard(
                     title: "Project Mhs",
                     icon: Icons.business,
@@ -113,11 +101,16 @@ class HomePage extends StatelessWidget {
                   ),
 
                   MenuCard(
-                    title: "Pengumuman",
+                    title: "Contoh Absensi",
                     icon: Icons.campaign,
                     color: Colors.red,
                     onTap: () {
-                      print("Menu Pengumuman");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const AbsensiPage(),
+                        ),
+                      );
                     },
                   ),
                 ],
@@ -144,21 +137,14 @@ class HomePage extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-
-                    Icon(
-                      Icons.info,
-                      color: Colors.green.shade700,
-                      size: 40,
-                    ),
+                    Icon(Icons.info, color: Colors.green.shade700, size: 40),
 
                     const SizedBox(width: 16),
 
                     const Expanded(
                       child: Text(
                         "Selamat datang di aplikasi Universitas Tabanan.",
-                        style: TextStyle(
-                          fontSize: 14,
-                        ),
+                        style: TextStyle(fontSize: 14),
                       ),
                     ),
                   ],
@@ -214,25 +200,17 @@ class MenuCard extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-
             CircleAvatar(
               radius: 30,
               backgroundColor: color.withOpacity(0.15),
-              child: Icon(
-                icon,
-                color: color,
-                size: 30,
-              ),
+              child: Icon(icon, color: color, size: 30),
             ),
 
             const SizedBox(height: 16),
 
             Text(
               title,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
           ],
         ),
