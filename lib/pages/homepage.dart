@@ -1,9 +1,24 @@
 import 'package:flutter/material.dart';
 import 'absensi.dart';
+import 'login.dart';
+import 'services/auth_service.dart';
 
 class HomePage extends StatelessWidget {
   final Function(int) onMenuTap;
   const HomePage({super.key, required this.onMenuTap});
+
+  Future<void> _logout(BuildContext context) async {
+    await AuthService().logout();
+
+    if (!context.mounted) return;
+
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (context) => const LoginPage()),
+      (route) => false,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,6 +34,11 @@ class HomePage extends StatelessWidget {
         ),
         actions: [
           IconButton(onPressed: () {}, icon: const Icon(Icons.notifications)),
+          IconButton(
+            tooltip: "Logout",
+            onPressed: () => _logout(context),
+            icon: const Icon(Icons.logout),
+          ),
         ],
       ),
 
