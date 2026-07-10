@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AbsensiService {
-  final String baseUrl = "http://webayudiah.test/api";
+  final String baseUrl = "http://ayudiahfernita.com/api";
 
   Future<String?> getToken() async {
     final prefs = await SharedPreferences.getInstance();

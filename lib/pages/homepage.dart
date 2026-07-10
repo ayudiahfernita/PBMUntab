@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'absensi.dart';
 import 'login.dart';
 import 'services/auth_service.dart';
+import 'jadwal_page.dart';
 
 class HomePage extends StatelessWidget {
   final Function(int) onMenuTap;
@@ -99,6 +100,18 @@ class HomePage extends StatelessWidget {
                     color: Colors.blue,
                     onTap: () {
                       onMenuTap(1);
+                    },
+                  ),
+
+                  MenuCard(
+                    title: "Jadwal Kuliah",
+                    icon: Icons.schedule,
+                    color: Colors.blue,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const JadwalPage()),
+                      );
                     },
                   ),
 
